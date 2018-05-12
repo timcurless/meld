@@ -46,10 +46,10 @@ func MakeHandler(s Service, logger kitlog.Logger) http.Handler {
 
 	r := mux.NewRouter()
 
-	r.Handle("meld/v1/aws/ec2", createAWSEC2Handler).Methods("POST")
-	r.Handle("meld/v1/aws/ec2/{id}", readAWSEC2Handler).Methods("GET")
-	r.Handle("meld/v1/aws/ec2/{id}", updateAWSEC2Handler).Methods("PUT")
-	r.Handle("meld/v1/aws/ec2/{id}", deleteAWSEC2Handler).Methods("DELETE")
+	r.Handle("/meld/v1/aws/ec2", createAWSEC2Handler).Methods("POST")
+	r.Handle("/meld/v1/aws/ec2/{id}", readAWSEC2Handler).Methods("GET")
+	r.Handle("/meld/v1/aws/ec2/{id}", updateAWSEC2Handler).Methods("PUT")
+	r.Handle("/meld/v1/aws/ec2/{id}", deleteAWSEC2Handler).Methods("DELETE")
 
 	return r
 }

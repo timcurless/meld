@@ -10,7 +10,7 @@ import (
 
 	"github.com/go-kit/kit/log"
 
-	"github.com/timcurless/titanium/meld"
+	"github.com/timcurless/meld"
 )
 
 const (

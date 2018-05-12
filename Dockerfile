@@ -9,8 +9,8 @@ WORKDIR /go/src/meld/
 RUN dep ensure --vendor-only
 
 COPY . /go/src/meld/
-WORKDIR /go/src/meld/
-RUN go install ./...
+WORKDIR /go/src/meld/cmd/meldsvc
+RUN dep ensure && go build -o /bin/meld
 
 FROM alpine:3.7
 RUN apk add --no-cache curl && \
